@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2020 at 08:20 PM
+-- Generation Time: Apr 29, 2020 at 12:08 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -33,6 +33,7 @@ CREATE TABLE `bought_tickets` (
   `airlines_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ticket_quantity` int(10) NOT NULL,
   `ticket_price` bigint(255) NOT NULL,
+  `selling_price` bigint(255) NOT NULL,
   `ticket_status` int(10) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -42,10 +43,10 @@ CREATE TABLE `bought_tickets` (
 -- Dumping data for table `bought_tickets`
 --
 
-INSERT INTO `bought_tickets` (`id`, `airlines_name`, `ticket_quantity`, `ticket_price`, `ticket_status`, `created_at`, `updated_at`) VALUES
-(15, 'US Bangla Airlines', 1, 1500, 2, '2020-04-28 12:14:29', '2020-04-28 12:14:44'),
-(16, 'Biman Bangladesh Airlines', 1, 2000, 2, '2020-04-28 12:15:52', '2020-04-28 12:16:05'),
-(17, 'Regent Airways', 1, 1000, 2, '2020-04-28 12:17:29', '2020-04-28 12:17:50');
+INSERT INTO `bought_tickets` (`id`, `airlines_name`, `ticket_quantity`, `ticket_price`, `selling_price`, `ticket_status`, `created_at`, `updated_at`) VALUES
+(20, 'Biman Bangladesh Airlines', 1, 2000, 2400, 2, '2020-04-28 16:06:06', '2020-04-28 16:06:18'),
+(21, 'US Bangla Airlines', 1, 1500, 1680, 2, '2020-04-28 16:06:27', '2020-04-28 16:06:49'),
+(22, 'Regent Airways', 1, 1000, 1100, 2, '2020-04-28 16:06:56', '2020-04-28 16:07:07');
 
 -- --------------------------------------------------------
 
@@ -69,9 +70,9 @@ CREATE TABLE `customer_details` (
 --
 
 INSERT INTO `customer_details` (`id`, `cus_name`, `cus_phone`, `airlines_name`, `ticket_price`, `ticket_quantity`, `created_at`, `updated_at`) VALUES
-(2, 'shihab', 32311244, 'US Bangla Airlines', 1500, 1, '2020-04-28 12:14:44', '2020-04-28 12:14:44'),
-(3, 'fahim', 122242333, 'Biman Bangladesh Airlines', 2000, 1, '2020-04-28 12:16:05', '2020-04-28 12:16:05'),
-(4, 'abdul', 227443223, 'Regent Airways', 1000, 1, '2020-04-28 12:17:50', '2020-04-28 12:17:50');
+(7, 'shihab', 1516105144, 'Biman Bangladesh Airlines', 2400, 1, '2020-04-28 16:06:18', '2020-04-28 16:06:18'),
+(8, 'rahim', 122242333, 'US Bangla Airlines', 1680, 1, '2020-04-28 16:06:49', '2020-04-28 16:06:49'),
+(9, 'abdul', 118283445, 'Regent Airways', 1100, 1, '2020-04-28 16:07:08', '2020-04-28 16:07:08');
 
 -- --------------------------------------------------------
 
@@ -134,9 +135,9 @@ CREATE TABLE `sold_tickets` (
 --
 
 INSERT INTO `sold_tickets` (`id`, `airlines_name`, `ticket_quantity`, `ticket_price`, `cus_name`, `cus_phone`, `profit`, `created_at`, `updated_at`) VALUES
-(9, 'US Bangla Airlines', 1, 1500, 'shihab', 32311244, 180, '2020-04-28 12:14:44', '2020-04-28 12:14:44'),
-(10, 'Biman Bangladesh Airlines', 1, 2000, 'fahim', 122242333, 400, '2020-04-28 12:16:05', '2020-04-28 12:16:05'),
-(11, 'Regent Airways', 1, 1000, 'abdul', 227443223, 100, '2020-04-28 12:17:50', '2020-04-28 12:17:50');
+(14, 'Biman Bangladesh Airlines', 1, 2400, 'shihab', 1516105144, 400, '2020-04-28 16:06:18', '2020-04-28 16:06:18'),
+(15, 'US Bangla Airlines', 1, 1680, 'rahim', 122242333, 180, '2020-04-28 16:06:49', '2020-04-28 16:06:49'),
+(16, 'Regent Airways', 1, 1100, 'abdul', 118283445, 100, '2020-04-28 16:07:08', '2020-04-28 16:07:08');
 
 -- --------------------------------------------------------
 
@@ -210,13 +211,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bought_tickets`
 --
 ALTER TABLE `bought_tickets`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `customer_details`
 --
 ALTER TABLE `customer_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -234,7 +235,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `sold_tickets`
 --
 ALTER TABLE `sold_tickets`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `users`
