@@ -18,7 +18,10 @@
    }
    .button{
        padding-top: 30px;
-   } 
+   }
+   h4{
+       color: red;
+   }
 </style>
 @endsection
 @section('home')
@@ -79,6 +82,7 @@
                             {{ session()->get('success1') }}
                         </div>
                     @endif
+                    <h4 class="result"></h4>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Airlines Name:</label>
                         <input type="text" class="form-control" id="airlines_name" name="airlines_name" readonly>
@@ -119,11 +123,15 @@
             url:'/checkticket',
             success:function(response)
             {
-                $.each(response, function(index, el) { 
+                if(response == ""){
+                    $(".result").html("Buy A Ticket First!!!");
+                }else{
+                    $.each(response, function(index, el) { 
                     $("#airlines_name").val(el['airlines_name']);
                     $("#ticket_quantity").val(el['ticket_quantity']);
                     $("#ticket_price").val(el['selling_price']);
                 });
+                }
             }
 
             });
