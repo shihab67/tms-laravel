@@ -122,7 +122,7 @@
                 $.each(response, function(index, el) { 
                     $("#airlines_name").val(el['airlines_name']);
                     $("#ticket_quantity").val(el['ticket_quantity']);
-                    $("#ticket_price").val(el['ticket_price']);
+                    $("#ticket_price").val(el['selling_price']);
                 });
             }
 

@@ -38,13 +38,13 @@ class SoldTicketContorller extends Controller
     $airlines = $request->airlines_name;
     if($airlines == "Biman Bangladesh Airlines"){
        $price =  $request->ticket_price;
-       $profit = $price*0.2;
+       $profit = $price - 2000;
     }else if($airlines == "US Bangla Airlines"){
         $price =  $request->ticket_price;
-        $profit = $price*0.12;
+        $profit = $price - 1500;
      }else if($airlines == "Regent Airways"){
         $price =  $request->ticket_price;
-        $profit = $price*0.10;
+        $profit = $price - 1000;
      }
     
     $insert = SoldTicket::create([
