@@ -50,7 +50,7 @@
 @section('home')
 <form class="form-signin" method="POST">
     @csrf
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in(username: shihab, Password: 1234)</h1>
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <button type="button" class="close" data-dismiss="alert">&times</button>

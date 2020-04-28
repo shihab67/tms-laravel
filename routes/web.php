@@ -20,12 +20,20 @@ Route::post('/','LoginController@verify');
 
 Route::get('/home','HomeController@index');
 
+Route::get('/logout','LogoutController@index');
+
 Route::post('/home/buyTicket','BoughtTicketContorller@insert')->name('ticket.buy');
 Route::post('/home/sellTicket','SoldTicketContorller@insert')->name('ticket.sell');
 
 Route::get('/checkticket','SoldTicketContorller@getTicket');
 
 Route::get('/soldtickets','SoldTicketContorller@soldTicket');
+
+Route::get('/customerdetails','CustomerDetailContorller@list');
+
+Route::get('/stats','HomeController@stats');
+
+
 
 
 

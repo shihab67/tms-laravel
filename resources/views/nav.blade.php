@@ -13,7 +13,11 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/customerdetails">Customer Details</a>
-          </li>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/stats">Statistics</a>
+        </li>
       </ul>
+      <a class="btn btn-danger" href="/logout" class="navbar-brand pull-right"><strong>Logout, {{session()->get('username')}}</strong></a>
     </div>
 </nav>

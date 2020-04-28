@@ -38,7 +38,7 @@
                     </div>
                     @endif
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Airlines Name</label>
+                        <label for="exampleFormControlSelect1">Airlines Name:</label>
                         <select class="form-control" id="dropdown1" name="airlines" onchange="chkind()">
                           <option value="0">Select An Airlines</option>
                           <option>Biman Bangladesh Airlines</option>
@@ -47,11 +47,11 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Ticket Quantity</label>
+                        <label for="exampleFormControlSelect1">Ticket Quantity:</label>
                         <input type="text" class="form-control" name="quantity" value="1" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Ticket Price(Tk.)</label>
+                        <label for="exampleFormControlSelect1">Ticket Price(Tk.):</label>
                         <input type="text" class="form-control" id="price" name="price" readonly>
                     </div>
                 </form>
