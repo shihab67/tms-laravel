@@ -79,7 +79,10 @@
                     @endif       
                     @if(session()->has('success1'))
                         <div class="alert alert-success">
-                            {{ session()->get('success1') }}
+                            <button type="button" class="close" data-dismiss="alert">&times</button>
+                            <ul>
+                                <li style="color:green">{{ session()->get('success1') }}</li>
+                            </ul>
                         </div>
                     @endif
                     <h4 class="result"></h4>
