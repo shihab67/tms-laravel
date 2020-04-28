@@ -60,9 +60,11 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label for="exampleFormControlSelect1">Ticket Quantity</label>
                     <input type="text" class="form-control" name="quantity" value="1" disabled>
                 </div>
                 <div class="form-group">
+                    <label for="exampleFormControlSelect1">Ticket Price</label>
                     <input type="text" class="form-control" name="price" disabled>
                 </div>
             </div>
